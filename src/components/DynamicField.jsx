@@ -10,6 +10,8 @@ import {
   error,
 } from "react-hook-form";
 
+import styles from './style.module.css'
+
 export const DynamicField = () => {
   const {
     register,
@@ -46,43 +48,43 @@ export const DynamicField = () => {
   // console.log(useWatch({ name: "test", control }));
   return (
     <>
-      <form onSubmit={handleSubmit((data) => setState(data))}>
-        <ul>
+      <form  onSubmit={handleSubmit((data) => setState(data))}>
+        <ul className={styles['wrapper-grid']}>
           {fields.map((item, index) => (
-            <li key={item.id}>
-              <div>
+            <li className={styles['d-flex']} key={item.id}>
+              <div className={`${styles['d-flex']} ${styles.space} ${styles.containerInput}`}>
                 <Controller
                   shouldUnregister={true}
                   rules={{
                     maxLength: { value: 3, message: "FirstName Max Length 3" },
                   }}
-                  render={({ field }) => <input {...field} />}
+                  render={({ field }) => <input className={styles.inputs}  {...field} />}
                   name={`test.${index}.firstName`}
                   control={control}
                 />
                 {errors?.test?.[index]?.firstName && (
-                  <span>{errors.test[index].firstName.message}</span>
+                  <span  className={styles.badge}>{errors.test[index].firstName.message}</span>
                 )}
               </div>
-              <div>
+              <div className={`${styles['d-flex']} ${styles.space} ${styles.containerInput}`}>
                 <Controller
                   shouldUnregister={true}
                   rules={{
                     maxLength: { value: 3, message: "FirstName Max Length 3" },
                   }}
-                  render={({ field }) => <input {...field} />}
+                  render={({ field }) => <input  className={styles.inputs} {...field} />}
                   name={`test.${index}.lastName`}
                   control={control}
                 />
                 {errors?.test?.[index]?.lastName && (
-                  <span>{errors.test[index].lastName.message}</span>
+                  <span className={styles.badge}>{errors.test[index].lastName.message}</span>
                 )}
               </div>
             </li>
           ))}
         </ul>
 
-        <input type="submit" />
+        <input type="submit" className={styles['btn-primary']} />
       </form>
 
       <ul>

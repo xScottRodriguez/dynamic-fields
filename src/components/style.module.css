@@ -1,0 +1,42 @@
+/** @format */
+
+.inputs {
+  padding: 20px;
+  border-radius: 10px;
+  outline: none;
+  border: 0.5px solid green;
+  margin-bottom: 5px;
+}
+
+.btn-primary{
+  outline: none;
+  border-radius: 10px;
+  padding: 20px;
+  color: #fbfbfbfb;
+  background-color: aquamarine;
+}
+.containerInput{
+  width: 80%;
+}
+.wrapper-grid{
+  display: grid;
+  grid-template-columns:repeat(6,1fr);
+  gap: 10px;
+  
+}
+
+.space{
+  padding:5px;
+  
+}
+.d-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.badge{
+  padding:10px;
+  background: rgba(255, 0, 0, 0.3);
+  border-radius: 10px;
+}
