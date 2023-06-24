@@ -24,9 +24,9 @@ export const DynamicField = () => {
   } = useForm({
     defaultValues: {
       test: [
-        { firstName: "Bil", lastName: "Luo" },
-        { firstName: "Bil", lastName: "Luo" },
-        { firstName: "Bil", lastName: "Luo" },
+        { firstName: "Bill", lastName: "Luo" },
+        { firstName: "Bill", lastName: "Luo" },
+        { firstName: "Bill", lastName: "Luo" },
 
         { firstName: "Bil", lastName: "Luo" },
         { firstName: "Bil", lastName: "Luo" },
